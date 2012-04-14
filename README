@@ -1,0 +1,23 @@
+PHPplistMaker is a very light PHP-Array to plist converter.
+
+Getting Started - Default plist generation
+------------------------------------------
+
+
+//Get some data in an associative array
+$data = array(
+  'places_sq_number' => '53',
+  'dict_rockU' => array('foo' => 'bar'),
+  'pages_sq_number' => '53',
+  'hotline_sq_number' => '5ss3',
+  'tickets_sq_number' => '53',
+  'array_testme'	=> array(1,2,3,4,5)
+);
+
+
+try {
+	$plist = new PHPplistMaker($data);
+	echo $plist->getPlist();
+} catch (Exception $e) {
+    echo 'Catched exception: ' . $e->getMessage();
+}
